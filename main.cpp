@@ -18,14 +18,13 @@ Descripción este es un proyecto demo para la clase de Pensamiento
 #include <iostream>   //para imprimir.
 #include "Empleado.h" //donde estan los objetos de mi proyecto.
 
-using namespace std;
+using namespace std;  //para no tener que agregar std a cada cout y cin
 
 const int MAX = 100; //constante de tamaño de arreglos
 
-//Procedimiento menu
+//Procedimiento menu muestra en consola las opciones al usuario
 void menu(){
 
-    //Imprime las opciones que va a tener el sistema
     cout << "Menu:\n";
     cout << "1. Mostrar trabajadores asalariados. \n";
     cout << "2. Mostrar trabajadores por hora. \n";
@@ -42,12 +41,14 @@ void menu(){
 }
 
 /*
-Recibe el nombre, salario, el id general de asalariados y el arreglo de asaliadors
-el metodo genera el nuevo id, crea el objeto Asalariado y lo agrega al arreglo
+Recibe el nombre, salario, el id general de asalariados y el arreglo de 
+asalariados el metodo genera el nuevo id, para crear el objeto Asalariado 
+y lo agregarlo al arreglo recibido.
 
-Devuelve el último índice. 
+Devuelve el último del arreglo índice donde se agregó el objeto. 
 */
-int agrega_asalariado(string nombre, double salario, int ultimo_id, Asalariado asas[]){
+int agrega_asalariado(string nombre, double salario, 
+					  int ultimo_id, Asalariado asas[]){
 
     ultimo_id =+ 1;
 	Asalariado aux(ultimo_id, nombre, salario);
@@ -57,13 +58,14 @@ int agrega_asalariado(string nombre, double salario, int ultimo_id, Asalariado a
 }
 
 /*
-Recibe el nombre, horas, salario, el id general de empleados por horas y el arreglo de 
-empleados por horas. 
-La funcion genera el nuevo id, crea el objeto PorHora y lo agrega al arreglo
+Recibe el nombre, horas, salario, el id general de empleados por horas 
+y el arreglo de  empleados por horas, para crear el objeto PorHora y
+agregagarlo al arreglo recibido.
 
-Devuelve el último índice. 
+Devuelve el último del arreglo índice donde se agregó el objeto. 
 */
-int agrega_por_hora(string nombre, double horas, double salario, int ultimo_id, PorHora porhrs[]){
+int agrega_por_hora(string nombre, double horas, double salario, 
+					int ultimo_id, PorHora porhrs[]){
 
 	ultimo_id =+ 1;
     PorHora aux(ultimo_id + 100, nombre, horas, salario);
@@ -73,13 +75,14 @@ int agrega_por_hora(string nombre, double horas, double salario, int ultimo_id, 
 }
 
 /*
-Recibe el nombre, horas, salario, el id general de practicantes y el arreglo de 
-practicantes por horas. 
-La funcion genera el nuevo id, crea el objeto PorHora y lo agrega al arreglo
+Recibe el nombre, horas, salario, el id general de practicantes y el arreglo 
+de practicantes por horas para generar el nuevo id, crear el objeto PorHora
+ y agregalo al arreglo recibido.
 
-Devuelve el último índice. 
+Devuelve el último del arreglo índice donde se agregó el objeto. 
 */
-int agrega_practicantes(string nombre, double horas, double salario, int ultimo_id, Practicante practs[]){
+int agrega_practicantes(string nombre, double horas, double salario, 
+						int ultimo_id, Practicante practs[]){
 
 	ultimo_id =+ 1;
     Practicante aux(ultimo_id+200, nombre, horas, salario);
@@ -89,14 +92,15 @@ int agrega_practicantes(string nombre, double horas, double salario, int ultimo_
 
 /* 
  Recibe un arreglo de tipo Asalariado.
- Llena el arreglo con 5 ejemplos. Los identificadores de asalariados 
- van de 1 a 99.
+ Inicializa el arreglo con 5 ejemplos para tener datos iniciales en 
+ el programa. Los identificadores de asalariados van de 1 a 99.
 
- Devuelve el int id del último asalariados creado.
+ Devuelve el int id del último asalariados creado (5).
 */
-int creaEjemplosAsalariados( Asalariado asalariados[MAX]){
+int crea_ejemplos_asalariados( Asalariado asalariados[MAX]){
 	
-	//Cada espacio de arreglo tiene diferente objeto y manda como parametro sus variables instancia
+	/*Cada espacio de arreglo tiene diferente objeto y manda como 
+	parametro sus variables instancia*/
     int id = 0;
     asalariados[0] = Asalariado(id, "Fernando", 2000);
     id+=1;
@@ -114,12 +118,12 @@ int creaEjemplosAsalariados( Asalariado asalariados[MAX]){
 
 /* 
  Recibe un arreglo de tipo PorHora.
- Llena el arreglo con 5 ejemplos. Los identificadores de empleados 
- por hora van del 100 al 199.
+ Llena el arreglo con 5 ejemplos para tener datos iniciales en el
+ programa. Los identificadores de empleados por hora van del 100 al 199.
 
  Devuelve el int id del último empleado por hora creado.
 */
-int creaEjemplosPorHoras(PorHora porhoras [MAX] ){
+int crea_ejemplos_por_hora(PorHora porhoras [MAX] ){
 	
     int id = 0;
     porhoras[0]= PorHora(id+100, "Andres", 14, 300);
@@ -137,12 +141,13 @@ int creaEjemplosPorHoras(PorHora porhoras [MAX] ){
 
 /* 
  Recibe un arreglo de tipo Practicante.
- Llena el arreglo con 5 ejemplos. Los identificadores de practicantes 
- van del 200 al 299.
+ Llena el arreglo con 5 ejemplos para tener datos iniciales 
+ en el programa.. Los identificadores de practicantes van 
+ del 200 al 299.
 
  Devuelve el int id del último practicante creado.
 */
-int creaEjemplosPracticantes(Practicante practicantes[MAX] ){
+int crea_ejemplos_practicantes(Practicante practicantes[MAX] ){
     
 	int id = 0;
 	practicantes[0] = Practicante(id+200, "Diego", 10, 200);
@@ -166,7 +171,9 @@ La función calcula el total de salarios para hacienda
 
 Devuelve el total como un flotante.
 */ 
-double calcula_salarios_hacienda(Asalariado asas[], PorHora porhrs[], int iasas, int iporhrs){
+double calcula_salarios_hacienda(Asalariado asas[], PorHora porhrs[],
+                                 int iasas, int iporhrs){
+									 
 		double sum = 0;
 
 		//Ciclo que suma los valores de los Asalariados y lo guarda en sum1
@@ -190,7 +197,10 @@ La función calcula el total de salarios incluyendo practicantes.
 
 Devuelve el total como un flotante.
 */ 
-double calcula_salarios_totales(Asalariado asas[], PorHora porhrs[], Practicante practs[], int iasas, int iporhrs, int ipracts){
+double calcula_salarios_totales(Asalariado asas[], PorHora porhrs[], 
+								Practicante practs[], int iasas, 
+								int iporhrs, int ipracts){
+									
 		double sum = 0;
 
 		//Ciclo que suma los valores de los Asalariados y lo guarda en sum1
@@ -214,13 +224,13 @@ int main(int argc, char* argv[]){
 	//Inicializamos todos los arreglos con 5 tipos de empleados cada uno
 
     Asalariado asas [MAX];	
-	int iasas = creaEjemplosAsalariados(asas);
+	int iasas = crea_ejemplos_asalariados(asas);
 
     PorHora porhrs [MAX];
-	int iporhrs = creaEjemplosPorHoras(porhrs);
+	int iporhrs = crea_ejemplos_por_hora(porhrs);
 
     Practicante practs[MAX];
-    int ipracts = creaEjemplosPracticantes(practs);
+    int ipracts = crea_ejemplos_practicantes(practs);
 
 	string temp_nombre;
 
@@ -263,7 +273,8 @@ int main(int argc, char* argv[]){
 			case 4:
 				total=0;
 
-				//Ciclo que recorre el arrego y suma el pago mensual almacenandolo en una variable
+				/*Ciclo que recorre el arrego y suma el pago mensual 
+				almacenandolo en una variable*/
 				for(int i=0; i<=iasas;i++)
 					total = total + asas[i].pagoMensual();
 				cout<< total<< "\n";
@@ -295,7 +306,8 @@ int main(int argc, char* argv[]){
 			//Caso 8 Calcula los salarios totales
 			case 8:
 			
-				cout << calcula_salarios_totales(asas, porhrs, practs, iasas, iporhrs, ipracts);
+				cout << calcula_salarios_totales(asas, porhrs, practs, iasas, 
+												  iporhrs, ipracts);
 				
 			break;
 
@@ -304,7 +316,8 @@ int main(int argc, char* argv[]){
 				cin >> temp_nombre;
 				cout<< "Dime el salario" ;
 				cin >> temp_salario;
-				iasas = agrega_asalariado(temp_nombre, temp_salario, iasas, asas);
+				iasas = agrega_asalariado(temp_nombre, temp_salario, iasas, 
+										  asas);
 			break;
 
 			case 10:
@@ -314,7 +327,8 @@ int main(int argc, char* argv[]){
 				cin >> temp_salario;
 				cout<< "Dime las horas" ;
 				cin >> temp_horas;
-				iporhrs = agrega_por_hora(temp_nombre, temp_horas, temp_salario, iporhrs, porhrs);
+				iporhrs = agrega_por_hora(temp_nombre, temp_horas, temp_salario,
+										  iporhrs, porhrs);
 			break;
 
 			case 11:
@@ -324,7 +338,8 @@ int main(int argc, char* argv[]){
 				cin >> temp_salario;
 				cout<< "Dime las horas" ;
 				cin >> temp_horas;
-				ipracts = agrega_practicantes(temp_nombre, temp_horas, temp_salario, ipracts, practs);	
+				ipracts = agrega_practicantes(temp_nombre, temp_horas, temp_salario,
+											  ipracts, practs);	
 			break;
 		}
     }
