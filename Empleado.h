@@ -18,23 +18,20 @@ using namespace std;
 class Empleado {
 
 //Declaro variables de instancia
-private:
-    int id;
-    string nombre;
+    private:
+        int id;
+        string nombre;
 
 //Declaro los métodos que va a tener el objeto
-public :
+    public :
 
-    Empleado();
-    Empleado (int id, string nombre);
+        Empleado();
+        Empleado (int id, string nombre);
 
-    int getId() const;
-
-    std::string getNombre() const;
-
-    virtual double pagoMensual()=0;
-
-    std::string toString()const;
+        int getId() const;
+        string getNombre() const;
+        virtual double pagoMensual()=0;
+        string toString()const;
 };
 
 //Constructor por default
