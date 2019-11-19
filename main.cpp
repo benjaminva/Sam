@@ -113,29 +113,29 @@ int main(int argc, char* argv[]){
 			break;
 
 			case 9:
-				cout<< "Dime el nombre" ;
+				cout<< "Dime el nombre " ;
 				cin >> temp_nombre;
-				cout<< "Dime el salario" ;
+				cout<< "Dime el salario " ;
 				cin >> temp_salario;
 				empresa.agregaAsalariado(temp_nombre, temp_salario);
 			break;
 
 			case 10:
-				cout<< "Dime el nombre" ;
+				cout<< "Dime el nombre " ;
 				cin >> temp_nombre;
-				cout<< "Dime el salario" ;
+				cout<< "Dime el salario " ;
 				cin >> temp_salario;
-				cout<< "Dime las horas" ;
+				cout<< "Dime las horas " ;
 				cin >> temp_horas;
 				empresa.agregaPorhora(temp_nombre, temp_horas, temp_salario);
 			break;
 
 			case 11:
-				cout<< "Dime el nombre" ;
+				cout<< "Dime el nombre " ;
 				cin >> temp_nombre;
-				cout<< "Dime el salario" ;
+				cout<< "Dime el salario " ;
 				cin >> temp_salario;
-				cout<< "Dime las horas" ;
+				cout<< "Dime las horas " ;
 				cin >> temp_horas;
 				empresa.agregaPracticante(temp_nombre, temp_horas, temp_salario);
 			break;

@@ -3,12 +3,14 @@
 #ifndef EMPRESA_H_
 #define EMPRESA_H_
 #include <string>
+#include <iostream>
 #include <sstream>
+using namespace std;
+
 #include "Empleado.h"
 const int MAX = 100; //constante de tamaño de arreglos
 
 
-using namespace std;
 
 
 class Empresa {
@@ -136,8 +138,6 @@ Recorra todo el arreglo, imprimiendo cada uno de los objetos que pertenecen al m
 */
 
 void Empresa::muestraAsalariado(){
-
-
     //Ciclo que recorre el arreglo e imprime cada objeto.
 	for(int i=0; i<=iasas ;i++){
 		cout << asas[i].toString();
@@ -265,7 +265,7 @@ El metodo genera el nuevo id, crea el objeto Asalariado y lo agrega al arreglo
 */
 void Empresa::agregaAsalariado(string nombre, double salario){
 
-    iasas =+ 1;
+    iasas += 1;
 	Asalariado aux(iasas, nombre, salario);
 	asas[iasas] = aux;
 }
@@ -277,7 +277,7 @@ El metodo genera el nuevo id, crea el objeto PorHora y lo agrega al arreglo
 */
 void Empresa::agregaPorhora(string nombre, double horas, double salario){
 
-    iporhoras =+ 1;
+    iporhoras += 1;
     PorHora aux(iporhoras + 100, nombre, horas, salario);
     porhoras[iporhoras] = aux;
 
@@ -290,7 +290,7 @@ El metodo genera el nuevo id, crea el objeto PorHora y lo agrega al arreglo
 */
 void Empresa::agregaPracticante(string nombre, double horas, double salario){
 
-    ipracts =+ 1;
+    ipracts += 1;
     Practicante aux(ipracts+200, nombre, horas, salario);
     practicants[ipracts] = aux;
 
