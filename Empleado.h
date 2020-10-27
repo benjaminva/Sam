@@ -1,9 +1,16 @@
 /*
-Proyecto Nómina
-Samuel Octavio González Azpeitia
-A01704696
-16/10/2019
-*/
+ * Proyecto Nomina
+ * Samuel Octavio González Azpeitia
+ * A01704696
+ * 16/10/2019
+ */
+
+/*
+ * Clase Empleado contiene los métodos genéricos para el manejo de empleados
+ * y tiene 3 clases hijas que son especializaciones de empleado:
+ * Asalariado, PorHora y Practicante
+ *
+ */
 
 #ifndef EMPLEADO_H_
 #define EMPLEADO_H_
@@ -17,14 +24,14 @@ using namespace std;
 //Declaracion de clase empleado que es abstracta
 class Empleado {
 
-//Declaro variables de instancia
     protected:
+        //Declaro variables de instancia
         int id;
         string nombre;
 
-//Declaro los métodos que va a tener el objeto
-    public :
 
+    public :
+        //Declaro los métodos que va a tener el objeto
         Empleado();
         Empleado (int id, string nombre);
 
@@ -34,13 +41,16 @@ class Empleado {
         string toString()const;
 };
 
-/*
-* Constructor por default
-*/
+/**
+ * Constructor por default
+ *
+ * @param
+ * @return Objeto Empleado
+ */
 Empleado::Empleado(){
 
-    id=0;
-    nombre="";
+    id = 0;
+    nombre = "";
 
 }
 
@@ -52,9 +62,8 @@ Empleado::Empleado(){
 */
 Empleado::Empleado(int n, string name){
 
-    id=n;
-    nombre=name;
-
+    id = n;
+    nombre = name;
 
 }
 
@@ -67,7 +76,9 @@ Empleado::Empleado(int n, string name){
  * @return int: id del empleado
 */
 int Empleado::getId()const{
-    return id;
+
+   return id;
+
 }
 
 /**
@@ -79,6 +90,7 @@ int Empleado::getId()const{
 string Empleado::getNombre() const{
 
     return nombre;
+
 }
 
 /**
@@ -93,6 +105,7 @@ string Empleado::toString()const{
     stringstream aux;
     aux << "el id es " << id << " su nombre es "<< nombre << "\n";
     return aux.str();
+
 }
 
 //Declaro objeto asalariado que hereda de Empleado
@@ -120,8 +133,8 @@ class Asalariado: public Empleado{
 */
 Asalariado::Asalariado(){
 
-    id=0;
-    nombre="";
+    id = 0;
+    nombre = "";
 
 }
 
@@ -133,9 +146,9 @@ Asalariado::Asalariado(){
 */
 Asalariado::Asalariado(int n, string name, double salar){
 
-    id=n;
-    nombre=name;
-    salarioMensual=salar;
+    id = n;
+    nombre = name;
+    salarioMensual = salar;
 
 }
 
@@ -193,7 +206,7 @@ class PorHora: public Empleado{
 
     private:
         //Declaro las variables de instancia
-        double horastrabajadas, pagoporhora;
+        double horasTrabajadas, pagoPorHora;
 
     public :
         //Declaro metodos
@@ -220,15 +233,15 @@ PorHora::PorHora(){
  * Constructor que recibe id, nombre, horas y salario
  *
  * @param int n: id del Asalariado, string name: nombre,
- *        double pago: pagoporhora double salar: salario,
+ *        double pago: pagoPorHora double salar: salario,
  * @return Objeto PorHora
 */
 PorHora::PorHora(int n, string name, double horas, double pago){
 
-    id=n;
-    nombre=name;
-    horastrabajadas=horas;
-    pagoporhora=pago;
+    id = n;
+    nombre = name;
+    horasTrabajadas = horas;
+    pagoPorHora = pago;
 
 
 }
@@ -243,7 +256,7 @@ PorHora::PorHora(int n, string name, double horas, double pago){
 double PorHora:: pagoMensual(){
 
     int total;
-    total = horastrabajadas * pagoporhora;
+    total = horasTrabajadas * pagoPorHora;
     return total;
 }
 
@@ -266,7 +279,7 @@ class Practicante: public Empleado{
 
     private:
         //Variables de instancia del objeto
-        double horastrabajadas, pagopracticante;
+        double horasTrabajadas, pagopracticante;
 
     public :
         //Metodos del objeto
@@ -292,14 +305,14 @@ Practicante::Practicante(){
  * Constructor que recibe id, nombre, horas y salario
  *
  * @param int n: id del Asalariado, string name: nombre,
- *        double pago: pagoporhora double salar: salario,
+ *        double pago: pagoPorHora double salar: salario,
  * @return Objeto Practicante
 */
 Practicante::Practicante(int n, string name, double horas, double pago){
 
     id=n;
     nombre=name;
-    horastrabajadas=horas;
+    horasTrabajadas=horas;
     pagopracticante=pago;
 
 }
@@ -315,7 +328,7 @@ Practicante::Practicante(int n, string name, double horas, double pago){
 double Practicante:: pagoMensual(){
 
     int total;
-    total = horastrabajadas * pagopracticante;
+    total = horasTrabajadas * pagopracticante;
     return total;
 }
 
