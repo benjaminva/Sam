@@ -1,7 +1,10 @@
 # TC1033 Proyecto Demo
-Este proyecto Demo está hecho para seguir de referencia para los alumnos de TC1033. 
-Trata sobre una empresa que tiene que pagar impuestos, porlo que genera una estructura de clases para poder manejar a sus tipos de empleados. 
-Los empleados están separados en asalariados, empleados por hora y practicantes. Solo los asalariados y los empleados por hora generan impuestos. 
+Este proyecto demo está hecho para servir de ejemplo a los alumnos de Pensamiento Orientado a Objetos TC1033. Con la intención de que vean el alcance que se espera al final de la materia de su proyecto y que tengan ejemplos de estilo a seguir. 
+
+## Contexto
+
+Una empresa que tiene que pagar impuestos, porlo que genera una estructura de clases para poder manejar a sus tipos de empleados y facilitar su contabilidad. 
+Los empleados están separados en 3 tipos: asalariados, empleados por hora y practicantes. Solo los asalariados y los empleados por hora generan impuestos. 
 Los practicantes, aunque tambien cobran, no generan impuestos ya que su pago se registra como una beca.
 
 ## Funcionalidad
