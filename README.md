@@ -25,6 +25,6 @@ compilar con:
  correr en windows:
       "a.exe"
       
-##Correcciones
+## Correcciones
 
-para este programa se relizaron correcciones en e
+para este programa se relizaron correcciones en ...
