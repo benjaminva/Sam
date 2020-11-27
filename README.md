@@ -30,4 +30,10 @@ compilar con:
       
 ## Correcciones
 
-para este programa se relizaron correcciones en ...
+para este programa se relizaron las siguientes correcciones:
+  
+  1 se arregló es estilo en la biblioteca empresa.h
+  
+  2 se agregó casos de prueba en al función crea_asalariados en la línea 70 en el archivo empresa.h
+  
+  3 se corrigió la herencia en el Diagrama de clases y se agregó composición entre la clase empleado y la clase empresa
