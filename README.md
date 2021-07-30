@@ -3,7 +3,7 @@ Este proyecto demo está hecho para servir de ejemplo a los alumnos de Pensamien
 
 ## Contexto
 
-Una empresa que tiene que pagar impuestos, porlo que genera una estructura de clases para poder manejar a sus tipos de empleados y facilitar su contabilidad. 
+Una empresa que tiene que pagar impuestos, por lo que genera una estructura de clases para poder manejar a sus tipos de empleados y facilitar su contabilidad. 
 Los empleados están separados en 3 tipos: asalariados, empleados por hora y practicantes. Solo los asalariados y los empleados por hora generan impuestos. 
 Los practicantes, aunque tambien cobran, no generan impuestos ya que su pago se registra como una beca.
 
