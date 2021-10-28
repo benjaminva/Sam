@@ -61,17 +61,17 @@ int main(int argc, char* argv[]){
 
   			//Caso 1 que imprime los empleados de tipo asalariado
   			case 1:
-                    empresa.muestraAsalariado();
+                       empresa.muestraAsalariado();
   			  break;
 
   			//Caso 2 que imprime los empleados de tipo Por Hora
   			case 2:
-                    empresa.muestraPorHora();
+                     empresa.muestraPorHora();
   			  break;
 
   			//Caso 3 que imprime los empleados de tipo Practicantes
   			case 3:
-                    empresa.muestraPracticantes();
+                        empresa.muestraPracticantes();
   			  break;
 
   			//Caso 4 que imprime el total del salario de todos los Asalariados
