@@ -54,7 +54,6 @@ class Empresa {
         void agregaPracticante(string nombre, double horas, double salario);
 
 
-
 };
 
 /**
@@ -259,18 +258,16 @@ void Empresa::pagoPracticantes(){
 */
 void Empresa::pagoHacienda(){
 
-		double sum = 0;
+    double sum = 0;
 
-		//Ciclo que suma los valores de los Asalariados y lo guarda en sum1
-		for(int i = 0; i <= iasas ; i++)
-			sum += asas[i].pagoMensual();
-
-		//Ciclo que suma los valores de los PorHora y lo guarda en sum2
-		for(int i = 0; i <= iporhoras ; i++)
-			sum += porhoras[i].pagoMensual();
-
-		//Total que suma el total de los asalariados y por hora
-		cout<< sum << " \n";
+    //Ciclo que suma los valores de los Asalariados y lo guarda en sum1
+    for(int i = 0; i <= iasas ; i++)
+        sum += asas[i].pagoMensual();
+    //Ciclo que suma los valores de los PorHora y lo guarda en sum2
+    for(int i = 0; i <= iporhoras ; i++)
+        sum += porhoras[i].pagoMensual();
+    //Total que suma el total de los asalariados y por hora
+    cout<< sum << " \n";
 }
 
 /**
