@@ -81,7 +81,7 @@ Empresa::Empresa(){
 */
 void Empresa::creaEjemplosAsalariados(){
 
-  	//Cada espacio de arreglo tiene diferente objeto y manda como
+    //Cada espacio de arreglo tiene diferente objeto y manda como
     //parametro sus variables instancia
     asas[0] = Asalariado(iasas, "Fernando", 2000);
     iasas += 1;
@@ -131,7 +131,7 @@ void Empresa::creaEjemplosPorHoras(){
 */
 void Empresa::creaEjemplosPracticantes(){
 
-  	practicants[0] = Practicante(ipracts+200, "Diego", 10, 200);
+    practicants[0] = Practicante(ipracts+200, "Diego", 10, 200);
     ipracts += 1;
     practicants[1] = Practicante(ipracts+200, "Ramon", 15, 200);
     ipracts += 1;
@@ -154,8 +154,8 @@ void Empresa::creaEjemplosPracticantes(){
 void Empresa::muestraAsalariado(){
 
   //recorre el arreglo e imprime cada objeto.
-	for(int i = 0 ; i <= iasas ; i++){
-		cout << asas[i].toString();
+    for(int i = 0 ; i <= iasas ; i++){
+        cout << asas[i].toString();
     }
 
 }
@@ -224,7 +224,7 @@ void Empresa::pagoPorHora(){
     for(int i = 0 ; i <= iporhoras ; i++) {
         total = total + porhoras[i].pagoMensual();
     }
-	  cout<< total<< " \n";
+    cout<< total<< " \n";
 
 }
 
@@ -244,7 +244,7 @@ void Empresa::pagoPracticantes(){
     for(int i = 0; i <= ipracts ; i++){
         total = total + practicants[i].pagoMensual();
     }
-	  cout << total << " \n";
+    cout << total << " \n";
 
 }
 /**
@@ -287,16 +287,16 @@ void Empresa::pagoTotal(){
 
     double sum = 0;
 
-		//Ciclo que suma los valores de los Asalariados y lo guarda en sum1
+    //Ciclo que suma los valores de los Asalariados y lo guarda en sum1
     for(int i = 0 ; i <= iasas ; i++)
-			sum += asas[i].pagoMensual();
-		//Ciclo que suma los valores de los PorHora y lo guarda en sum2
-	  for(int i = 0 ; i<= iporhoras ; i++)
-			sum += porhoras[i].pagoMensual();
-		//Ciclo que suma los valores de los Practicantes y lo guarda en sum3
+        sum += asas[i].pagoMensual();
+    //Ciclo que suma los valores de los PorHora y lo guarda en sum2
+    for(int i = 0 ; i<= iporhoras ; i++)
+        sum += porhoras[i].pagoMensual();
+    //Ciclo que suma los valores de los Practicantes y lo guarda en sum3
     for(int i = 0 ; i < ipracts ; i++)
-			sum += practicants[i].pagoMensual();
-	  //Total que suma el total de los asalariados, por hora y practicantes
+        sum += practicants[i].pagoMensual();
+    //Total que suma el total de los asalariados, por hora y practicantes
     cout << sum << " \n";
 
 }
@@ -312,8 +312,8 @@ void Empresa::pagoTotal(){
 void Empresa::agregaAsalariado(string nombre, double salario){
 
     iasas += 1;
-  	Asalariado aux(iasas, nombre, salario);
-  	asas[iasas] = aux;
+    Asalariado aux(iasas, nombre, salario);
+    asas[iasas] = aux;
 
 }
 
