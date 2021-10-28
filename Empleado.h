@@ -341,7 +341,6 @@ double Practicante:: pagoMensual(){
 */
 string Practicante::toString(){
 
-
     stringstream aux;
     aux << "El Id es " << id << " su nombre es "<< nombre << " su salario es " << pagoMensual() << "\n";
     return aux.str();
